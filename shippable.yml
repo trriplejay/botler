@@ -7,7 +7,7 @@ build:
   pre_ci_boot:
     image_name: ubuntu
   ci:
-    - imageName=trriplejay/botler:$BRANCH:$BUILD_NUMBER
+    - imageName=trriplejay/botler:$BRANCH.$BUILD_NUMBER
     - sudo docker build -t $imageName .
     - sudo docker push $imageName
 
