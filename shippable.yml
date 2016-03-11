@@ -15,3 +15,9 @@ integrations:
   hub:
     - integrationName: "trriplejay docker hub"
       type: docker
+
+  notifications:
+    - integrationName: "imperialchat"
+      type: slack
+      recipients: "#botler_scripts"
+      on_success: always
