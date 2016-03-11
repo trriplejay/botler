@@ -19,5 +19,9 @@ RUN yo hubot --owner="You" --name="HuBot" --description"HuBot in a container" --
 ADD external-scripts.json /hubot/
 ADD /scripts /hubot/scripts
 
+#add version env variable
+ARG version="none"
+ENV BOTLER_VERSION=$version
+
 RUN npm install hubot-slack --save && npm install
 CMD bin/hubot -a slack

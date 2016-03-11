@@ -9,7 +9,7 @@ build:
     image_tag: prod
   ci:
     - imageName=trriplejay/botler:$BRANCH.$BUILD_NUMBER
-    - sudo docker build -t $imageName .
+    - sudo docker build -t $imageName --build-arg version=$BUILD_NUMBER .
     - sudo docker push $imageName
 
 integrations:
