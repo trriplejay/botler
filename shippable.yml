@@ -5,7 +5,8 @@ node_js:
 
 build:
   pre_ci_boot:
-    image_name: ubuntu
+    image_name: drydock/u14nod
+    image_tag: prod
   ci:
     - imageName=trriplejay/botler:$BRANCH.$BUILD_NUMBER
     - sudo docker build -t $imageName .
