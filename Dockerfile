@@ -28,5 +28,5 @@ ADD /scripts /hubot/scripts
 ARG version="none"
 ENV BOTLER_VERSION=$version
 
-RUN npm install hubot-slack --save && npm install
+RUN npm install hubot-slack && npm install
 CMD bin/hubot -a slack
