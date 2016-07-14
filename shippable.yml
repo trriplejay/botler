@@ -4,6 +4,7 @@ node_js:
   - 0.12
 
 build:
+  cache: true
   pre_ci_boot:
     image_name: drydock/u14nod
     image_tag: prod
