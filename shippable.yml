@@ -15,7 +15,7 @@ build:
     - sudo docker build -t $imageName --build-arg version=$BUILD_NUMBER .
     - sudo docker push $imageName
   on_success:
-    - ssh $cloudmachine -i /tmp/ssh/$PRIVATE_KEY_NAME /trriplejay/hubot/run.sh $BRANCH.$BUILD_NUMBER
+    - ssh $cloudmachine -i /tmp/ssh/$PRIVATE_KEY_NAME ~/trriplejay/hubot/run.sh $BRANCH.$BUILD_NUMBER
 
 integrations:
   hub:
