@@ -2,7 +2,8 @@ FROM trriplejay/hubot-base:latest
 
 # install external scripts
 RUN npm install hubot-yelp
-RUN npm install hubot-slack
+RUN npm install hubot-docker
+RUN npm install hubot-youtube
 
 ADD external-scripts.json /hubot/
 
@@ -13,5 +14,5 @@ ADD /scripts /hubot/scripts
 ARG version="none"
 ENV BOTLER_VERSION=$version
 
-RUN npm install
+#RUN npm install
 CMD bin/hubot -a slack
