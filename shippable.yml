@@ -10,6 +10,7 @@ build:
     image_name: drydock/u14nod
     image_tag: prod
   ci:
+    - npm --version
     - imageName=trriplejay/botler:$BRANCH.$BUILD_NUMBER
     - sudo docker build -t $imageName --build-arg version=$BUILD_NUMBER .
     - sudo docker push $imageName
