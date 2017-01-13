@@ -3,8 +3,8 @@ language: node_js
 node_js:
   - 0.12
 env:
-  global:
-    - secure: LEl58/0PZGPSXBTZNo4L2AI54vN/6Imn601EgmxbUmlXGzVnNu1agiwTLcF75nnyTiQzQFrC6/jmK7eDOEU1lEFzclpKBvmDcb6oOPxoD3ullCLeLPbXQ4mXnRcgGxukDfrieyp67lYJsLpu3jB7kBOQlyQxsAXaW/SEJelePyWZ7Cf+4n6lZrx21cmhngODo2d+ZeUPZoBbx01AfU3mO3KDQDje1rbWEL1rMArlF07Beva2nM1/9ibWy6OO4TGWXT2d5bqTDIjtP8EnVn4w9kfUJuuSmYbzbxIf1Pejug3uR25VASu+d+n+2BMGmCca0Qyl5uwAR/lu05UMA5xQeQ==
+#  global:
+#    - secure: LEl58/0PZGPSXBTZNo4L2AI54vN/6Imn601EgmxbUmlXGzVnNu1agiwTLcF75nnyTiQzQFrC6/jmK7eDOEU1lEFzclpKBvmDcb6oOPxoD3ullCLeLPbXQ4mXnRcgGxukDfrieyp67lYJsLpu3jB7kBOQlyQxsAXaW/SEJelePyWZ7Cf+4n6lZrx21cmhngODo2d+ZeUPZoBbx01AfU3mO3KDQDje1rbWEL1rMArlF07Beva2nM1/9ibWy6OO4TGWXT2d5bqTDIjtP8EnVn4w9kfUJuuSmYbzbxIf1Pejug3uR25VASu+d+n+2BMGmCca0Qyl5uwAR/lu05UMA5xQeQ==
 build:
   pre_ci_boot:
     image_name: drydock/u14nod
@@ -14,16 +14,16 @@ build:
     - imageName=trriplejay/botler:$BRANCH.$BUILD_NUMBER
     - sudo docker build -t $imageName --build-arg version=$BUILD_NUMBER .
     - sudo docker push $imageName
-  on_success:
-    - ssh $cloudmachine -i /tmp/ssh/$PRIVATE_KEY_NAME ~/trriplejay/hubot/run.sh $BRANCH.$BUILD_NUMBER
+#  on_success:
+#    - ssh $cloudmachine -i /tmp/ssh/$PRIVATE_KEY_NAME ~/trriplejay/hubot/run.sh $BRANCH.$BUILD_NUMBER
 
 integrations:
   hub:
     - integrationName: "trriplejay docker hub"
       type: docker
 
-  notifications:
-    - integrationName: "imperialchat"
-      type: slack
-      recipients: "#botler_scripts"
-      on_success: always
+#  notifications:
+#    - integrationName: "imperialchat"
+#      type: slack
+#      recipients: "#botler_scripts"
+#      on_success: always

@@ -1,4 +1,4 @@
-FROM trriplejay/hubot-base:latest
+FROM trriplejay/hubot-base:pi
 
 # install external scripts
 RUN npm install hubot-yelp
